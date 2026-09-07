@@ -8,6 +8,7 @@ from pathlib import Path
 
 import joblib
 import matplotlib.pyplot as plt
+from matplotlib import font_manager
 import numpy as np
 import pandas as pd
 import shap
@@ -298,10 +299,20 @@ def make_shap_figure(result: dict):
         data=np.asarray([display_value(feature, model_input[feature]) for feature in FEATURES]),
         feature_names=[LABELS[feature] for feature in FEATURES],
     )
+    font_candidates = []
+    for font_path in (
+        Path("/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc"),
+        Path("C:/Windows/Fonts/msyh.ttc"),
+        Path("C:/Windows/Fonts/simhei.ttf"),
+    ):
+        if font_path.exists():
+            font_manager.fontManager.addfont(str(font_path))
+            font_candidates.append(font_manager.FontProperties(fname=str(font_path)).get_name())
+
     plt.rcParams.update(
         {
             "font.family": "sans-serif",
-            "font.sans-serif": [
+            "font.sans-serif": font_candidates + [
                 "WenQuanYi Zen Hei",
                 "Microsoft YaHei",
                 "SimHei",
