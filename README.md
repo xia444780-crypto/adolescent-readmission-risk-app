@@ -2,6 +2,12 @@
 
 本目录是用于学位论文展示的 Streamlit 公网演示版本。应用保留“姓名”和“住院号”输入框，供演示时区分不同评估对象；两项信息不进入模型，也不参与 SHAP 计算。应用不连接数据库，不主动持久化用户输入。
 
+## 公网访问
+
+<https://adolescent-readmission-risk-tool.streamlit.app/>
+
+应用在 Streamlit Community Cloud 上以公开模式运行。首次访问或长时间无人使用后的首次唤醒可能需要等待片刻。
+
 ## 本地启动
 
 ```bash
@@ -14,7 +20,7 @@ python -m streamlit run app.py
 1. 将本目录内容放入一个 GitHub 仓库。
 2. 登录 <https://share.streamlit.io/> 并连接该仓库。
 3. 入口文件选择 `app.py`。
-4. Python 版本优先选择 3.14；若云平台当时不支持，则选择其提供的最新稳定版本并重新完成模型载入与预测一致性测试。
+4. Python 版本选择 3.12，与当前已验证的云端运行环境保持一致。
 5. 部署后运行 `python tests/smoke_test.py` 对应的等价测试，并分别用电脑和手机浏览器检查输入、结果、SHAP图、报告下载与重新评估。
 
 ## 发布范围
