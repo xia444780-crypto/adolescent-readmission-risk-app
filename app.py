@@ -301,7 +301,13 @@ def make_shap_figure(result: dict):
     plt.rcParams.update(
         {
             "font.family": "sans-serif",
-            "font.sans-serif": ["Microsoft YaHei", "SimHei", "Arial Unicode MS", "DejaVu Sans"],
+            "font.sans-serif": [
+                "WenQuanYi Zen Hei",
+                "Microsoft YaHei",
+                "SimHei",
+                "Arial Unicode MS",
+                "DejaVu Sans",
+            ],
             "axes.unicode_minus": False,
             "font.size": 10,
         }
