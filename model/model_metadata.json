@@ -1,0 +1,27 @@
+{
+  "model_name": "RF",
+  "model_version": "no_bmi_rf_v1.0",
+  "model_sha256": "E9CD25601BE951E9BEB0D330C3129A1E7A2DF3269DA55EEAFF1666EB54CAE532",
+  "outcome": "一年内非计划再入院",
+  "threshold": 0.28081169256024086,
+  "threshold_source": "训练集2次重复5折平均OOF概率的最大Youden J",
+  "training_n": 921,
+  "internal_validation_n": 231,
+  "external_validation_n": 311,
+  "features": [
+    "本次住院时长(X12,天)",
+    "既往住院次数(X24)",
+    "既往自杀未遂史(X26)",
+    "首次发病年龄(X18,岁)",
+    "出院情况",
+    "伴焦虑症状(X15)",
+    "医保类型(X9)",
+    "既往门诊治疗次数",
+    "抑郁程度(X13)",
+    "总病程(X25,月)"
+  ],
+  "excluded_feature": "BMI(X3,kg/m2)",
+  "python": "3.14.3",
+  "sklearn": "1.8.0",
+  "shap": "0.51.0"
+}
