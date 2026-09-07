@@ -301,6 +301,7 @@ def make_shap_figure(result: dict):
     )
     font_candidates = []
     for font_path in (
+        Path("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"),
         Path("/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc"),
         Path("C:/Windows/Fonts/msyh.ttc"),
         Path("C:/Windows/Fonts/simhei.ttf"),
@@ -313,6 +314,7 @@ def make_shap_figure(result: dict):
         {
             "font.family": "sans-serif",
             "font.sans-serif": font_candidates + [
+                "Noto Sans CJK SC",
                 "WenQuanYi Zen Hei",
                 "Microsoft YaHei",
                 "SimHei",
